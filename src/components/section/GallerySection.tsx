@@ -1,13 +1,18 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faChevronRight, 
+import {  
   faSearchPlus,
   faMountain,
   faHandsPraying,
   faPeopleGroup,
   faLeaf
 } from '@fortawesome/free-solid-svg-icons';
+import alamImage from "../../assets/img/pegunungan.jpg";
+import gontongRoyong from "../../assets/img/gontong_royong.jpg";
+import kopiImage from "../../assets/img/kopi.jpg";
+import gendang from "../../assets/img/gendang.jpeg";
+import sawahImage from "../../assets/img/hero.jpg";
+import nyaleImage from "../../assets/img/bau nyale.jpeg";
 
 const GallerySection = () => {
   const [activeTab, setActiveTab] = useState('semua');
@@ -18,42 +23,42 @@ const GallerySection = () => {
       id: 1, 
       category: 'alam', 
       title: 'Pegunungan Kembang Kuning', 
-      image: '/gallery/pegunungan.jpg',
+      image: alamImage,
       icon: faMountain
     },
     { 
       id: 2, 
       category: 'budaya', 
       title: 'Tarian Gendang Beleq', 
-      image: '/gallery/gendang-beleq.jpg',
+      image: gendang,
       icon: faHandsPraying
     },
     { 
       id: 3, 
       category: 'alam', 
       title: 'Persawahan Berundak', 
-      image: '/gallery/sawah.jpg',
+      image: sawahImage,
       icon: faLeaf
     },
     { 
       id: 4, 
       category: 'kegiatan', 
       title: 'Gotong Royong Desa', 
-      image: '/gallery/gotong-royong.jpg',
+      image: gontongRoyong,
       icon: faPeopleGroup
     },
     { 
       id: 5, 
       category: 'budaya', 
       title: 'Upacara Adat Bau Nyale', 
-      image: '/gallery/bau-nyale.jpg',
+      image: nyaleImage,
       icon: faHandsPraying
     },
     { 
       id: 6, 
       category: 'kegiatan', 
       title: 'Panen Kopi Desa', 
-      image: '/gallery/panen-kopi.jpg',
+      image: kopiImage,
       icon: faLeaf
     },
   ];
@@ -65,7 +70,7 @@ const GallerySection = () => {
   return (
     <section className="py-20 bg-white font-['Poppins']">
       <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-16">
+        <div data-aos = 'fade-up' className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">Galeri Desa</h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-green-500 to-emerald-600 mx-auto rounded-full"></div>
           <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto font-light">
@@ -75,7 +80,7 @@ const GallerySection = () => {
         
         {/* Tab Filter */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex bg-white rounded-lg shadow-sm p-1 border border-gray-200">
+          <div data-aos="fade-right" className="inline-flex bg-white rounded-lg shadow-sm p-1 border border-gray-200">
             {['semua', 'alam', 'budaya', 'kegiatan'].map((tab) => (
               <button
                 key={tab}
@@ -95,9 +100,9 @@ const GallerySection = () => {
         </div>
         
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div data-aos = "fade-left" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredItems.map((item) => (
-            <div key={item.id} className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-gray-100">
+            <div  key={item.id} className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-gray-100">
               <img 
                 src={item.image} 
                 alt={item.title} 
@@ -126,12 +131,7 @@ const GallerySection = () => {
           ))}
         </div>
         
-        <div className="text-center mt-12">
-          <button className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 inline-flex items-center">
-            Lihat Galeri Lengkap
-            <FontAwesomeIcon icon={faChevronRight} className="ml-2 w-4 h-4" />
-          </button>
-        </div>
+
       </div>
     </section>
   );

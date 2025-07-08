@@ -26,22 +26,22 @@ const HeroSection = () => {
       {/* Hero content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-20">
         <div className="max-w-4xl px-4">
-          <div className="mb-8 flex justify-center">
+          <div className="mb-8 mt-20 flex justify-center">
             <div className="bg-green-50/80 px-6 py-3 rounded-full border border-green-100 shadow-sm flex items-center">
               <FontAwesomeIcon icon={faLeaf} className="text-green-600 mr-2" />
               <span className="text-green-700 font-medium">Desa Wisata Unggulan</span>
             </div>
           </div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          <h1 data-aos = "fade-right" className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             Selamat Datang di <span className="text-green-600">Desa Kembang Kuning</span>
           </h1>
           
-          <p className="text-xl md:text-2xl mb-10 text-gray-600 font-light max-w-3xl mx-auto">
+          <p data-aos = "fade-left" className="text-xl md:text-2xl mb-10 text-gray-600 font-light max-w-3xl mx-auto">
             Menemukan keindahan alam dan kekayaan budaya di jantung Lombok Timur
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div data-aos = "fade-down" className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => scrollToSection('profil')}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center"

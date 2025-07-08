@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react';
+import AOS from 'aos';                            /* ▲ */
+import 'aos/dist/aos.css';  
+
 import Navbar from "./components/layout/Navbar";
 import HeroSection from "./components/section/HeroSection";
 import ProfileSection from "./components/section/ProfilSection";
@@ -9,6 +12,8 @@ import Footer from "./components/layout/FooterSection";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import logoDesa from "./assets/img/logo.png";
+import ScrollUpButton from './components/ui/ScrollUpButton';
+
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,6 +21,13 @@ const App = () => {
   useEffect(() => {
     // Set smooth scroll behavior
     document.documentElement.style.scrollBehavior = 'smooth';
+
+        /* ── 2. inisialisasi AOS sekali ─────────────────── */
+    AOS.init({
+      duration: 800,     // ms, durasi animasi
+      once: true,        // hanya animasi sekali
+      offset: 80,        // jarak trigger dari viewport
+    });
     
     // Handle hash-based scrolling on initial load
     const handleHashScroll = () => {
@@ -31,8 +43,10 @@ const App = () => {
     const timer = setTimeout(() => {
       setIsLoading(false);
       handleHashScroll();
+      AOS.refresh();     // pastikan AOS scan elemen setelah preload
     }, 2000);
 
+    
     return () => {
       clearTimeout(timer);
       document.documentElement.style.scrollBehavior = 'auto';
@@ -67,9 +81,10 @@ const App = () => {
         <section id="profil"><ProfileSection /></section>
         <section id="potensi"><PotensiSection /></section>
         <section id="galeri"><GallerySection /></section>
-        <section id="kontak"><MapSection /></section>
+        <MapSection />
       </main>
-      <Footer />
+      <section id="kontak"><Footer /></section>
+      <ScrollUpButton />
     </div>
   );
 };

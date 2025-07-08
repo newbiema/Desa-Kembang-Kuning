@@ -17,7 +17,7 @@ const ProfileSection = () => {
   };
 
   return (
-    <section id="profile" className="py-20 bg-white font-['Poppins']">
+    <section data-aos='fade-up' id="profile" className="py-20 bg-white font-['Poppins']">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">

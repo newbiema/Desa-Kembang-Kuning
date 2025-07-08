@@ -39,9 +39,9 @@ const PotensiSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-white font-['Poppins']">
+    <section  className="py-20 bg-white font-['Poppins']">
       <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-16">
+        <div data-aos='fade-up' className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">Potensi Unggulan Desa</h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-green-500 to-emerald-600 mx-auto rounded-full"></div>
           <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto font-light">
@@ -49,10 +49,11 @@ const PotensiSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {potensiItems.map((item, index) => (
             <div 
-              key={index} 
+              key={index}
+              data-aos= "fade-up"
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-100 flex flex-col"
             >
               <div className={`text-4xl mb-4 ${item.color} flex justify-center`}>
