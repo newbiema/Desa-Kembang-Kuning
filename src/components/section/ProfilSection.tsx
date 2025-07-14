@@ -4,18 +4,10 @@ import {
   faUsers,
   faCalendarAlt,
   faMountain,
-  faArrowRight
 } from '@fortawesome/free-solid-svg-icons';
 import profilImage from '../../assets/img/hero.jpg'; 
 
 const ProfileSection = () => {
-  const handleExploreClick = () => {
-    const nextSection = document.getElementById('next-section'); // Ganti dengan ID section tujuan
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section data-aos='fade-up' id="profile" className="py-20 bg-white font-['Poppins']">
       <div className="container mx-auto px-4 max-w-6xl">
@@ -113,16 +105,6 @@ const ProfileSection = () => {
                 </div>
               </div>
               
-              <button 
-                onClick={handleExploreClick}
-                className="mt-8 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-medium py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center text-lg group"
-              >
-                Jelajahi Selengkapnya
-                <FontAwesomeIcon 
-                  icon={faArrowRight} 
-                  className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1"
-                />
-              </button>
             </div>
           </div>
         </div>
