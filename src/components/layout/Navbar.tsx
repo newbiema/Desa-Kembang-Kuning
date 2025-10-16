@@ -60,7 +60,7 @@ const Navbar = () => {
               onClick={() => scrollToSection('beranda')}
               className={`font-bold font-['Poppins'] tracking-tight transition-colors ${isScrolled ? 'text-gray-800 text-xl' : 'text-gray-800 text-2xl'}`}
             >
-              <span className="text-green-600">Kembang</span> Kuning
+              Kembang <span className='text-green-500'>Kuning</span> 
               <span className={`block font-normal transition-all duration-300 ${isScrolled ? 'text-xs text-gray-500' : 'text-sm text-gray-600'}`}>
                 Desa Wisata Lombok Timur
               </span>

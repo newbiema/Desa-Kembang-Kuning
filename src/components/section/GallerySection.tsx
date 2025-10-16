@@ -100,7 +100,7 @@ const GallerySection = () => {
         </div>
         
         {/* Gallery Grid */}
-        <div data-aos = "fade-left" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div data-aos = "fade-down" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredItems.map((item) => (
             <div  key={item.id} className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-gray-100">
               <img 
@@ -130,8 +130,6 @@ const GallerySection = () => {
             </div>
           ))}
         </div>
-        
-
       </div>
     </section>
   );

@@ -1,6 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faImages, faLeaf } from '@fortawesome/free-solid-svg-icons';
 import heroImage from '../../assets/img/hero.jpg';
+import { useEffect } from 'react';
+import Typed  from 'typed.js';
+
 
 const HeroSection = () => {
   const scrollToSection = (id: string) => {
@@ -9,8 +12,19 @@ const HeroSection = () => {
       element.scrollIntoView({
         behavior: 'smooth'
       });
-    }
+    }  
   };
+
+  useEffect (() => {
+    const typing = new Typed ('#typing-hero',{
+      strings : ['Desa Asri',],
+      typeSpeed : 80,
+    });
+
+
+  }
+)
+
 
   return (
     <section id="beranda" className="relative h-[90vh] min-h-[600px] bg-white text-gray-800 font-['Poppins'] overflow-hidden">
@@ -37,8 +51,8 @@ const HeroSection = () => {
             Selamat Datang di <span className="text-green-600">Desa Kembang Kuning</span>
           </h1>
           
-          <p data-aos = "fade-left" className="text-xl md:text-2xl mb-10 text-gray-600 font-light max-w-3xl mx-auto">
-            Menemukan keindahan alam dan kekayaan budaya di jantung Lombok Timur
+          <p data-aos = "fade-left" className="text-xl md:text-2xl mb-10 text-gray-600 font-light max-w-3xl mx-auto" id='typing-hero'>
+            
           </p>
           
           <div data-aos = "fade-down" className="flex flex-col sm:flex-row gap-4 justify-center">
