@@ -15,18 +15,24 @@ const HeroSection = () => {
     }  
   };
 
-  useEffect (() => {
-    const typing = new Typed ('#typing-hero',{
-      strings : ['Desa Wisata • Asri • Alami ',],
-      typeSpeed : 80,
-    });
+useEffect(() => {
+  const typing = new Typed('#typing-hero', {  
+    strings: [
+      "Surga Tersembunyi di Tengah Alam",
+      "Pengalaman Wisata yang Tak Terlupakan", 
+      "Destinasi Liburan Keluarga Ideal",
+      "Keindahan Alam yang Memukau"
+    ],
+    typeSpeed: 80,
+    backSpeed: 50,
+    loop: true,
+    showCursor: false,
+  });
 
-    return () => {
-      // Destroy Typed instance during cleanup to stop animation
-      typing.destroy();
-    };
-  }, []);
-
+  return () => {
+    typing.destroy();
+  };
+}, []);
 
 
 
@@ -55,7 +61,7 @@ const HeroSection = () => {
             Selamat Datang di <span className="text-green-600">Desa Kembang Kuning</span>
           </h1>
           
-          <p data-aos = "fade-left" className="text-xl md:text-2xl mb-10 text-gray-600 font-light max-w-3xl mx-auto" id='typing-hero'>
+          <p data-aos = "fade-left" className="text-xl md:text-2xl mb-5 text-gray-600 font-light max-w-3xl mx-auto" id='typing-hero'>
             
           </p>
           
