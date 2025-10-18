@@ -17,13 +17,17 @@ const HeroSection = () => {
 
   useEffect (() => {
     const typing = new Typed ('#typing-hero',{
-      strings : ['Desa Asri',],
+      strings : ['Desa Wisata • Asri • Alami ',],
       typeSpeed : 80,
     });
 
+    return () => {
+      // Destroy Typed instance during cleanup to stop animation
+      typing.destroy();
+    };
+  }, []);
 
-  }
-)
+
 
 
   return (
