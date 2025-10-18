@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css' // Pastikan path ini sesuai
-import App from './App' // Ekstensi .tsx bisa dihilangkan
+import './index.css' 
+import App from './App' 
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
